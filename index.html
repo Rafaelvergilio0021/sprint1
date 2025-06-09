@@ -8,9 +8,12 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0e0e0e;
+      background-color: #5E1224;
       color: #fff;
       overflow-x: hidden;
+    }
+    html {
+      scroll-behavior: smooth;
     }
     .fade-in {
       opacity: 0;
@@ -26,15 +29,15 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: #1a1a1a;
-      border-bottom: 2px solid gold;
+      background-color: #45131F;
+      border-bottom: 2px solid #BFBA76;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
     .logo {
       font-size: 1.8rem;
-      color: gold;
+      color: #BFBA76;
       font-weight: bold;
     }
     .nav-links {
@@ -48,10 +51,16 @@
       transition: color 0.3s;
     }
     .nav-links a:hover {
-      color: gold;
+      color: #BFBA76;
+    }
+    .menu-toggle {
+      display: none;
+      color: #BFBA76;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
     .cart {
-      color: gold;
+      color: #BFBA76;
       cursor: pointer;
       font-size: 1.3rem;
     }
@@ -59,8 +68,8 @@
       position: fixed;
       top: 90px;
       right: 20px;
-      background-color: #1a1a1a;
-      border: 2px solid gold;
+      background-color: #5E1224;
+      border: 2px solid #BFBA76;
       padding: 1rem;
       border-radius: 10px;
       display: none;
@@ -68,11 +77,11 @@
     }
     .cart-items h3 {
       margin-top: 0;
-      color: gold;
+      color: #BFBA76;
     }
     .checkout-btn {
-      background-color: gold;
-      color: #000;
+      background-color: #BFBA76;
+      color: #5E1224;
       border: none;
       padding: 0.5rem 1rem;
       border-radius: 10px;
@@ -84,13 +93,13 @@
       display: none;
       max-width: 600px;
       margin: 3rem auto;
-      background-color: #1a1a1a;
-      border: 2px solid gold;
+      background-color: #5E1224;
+      border: 2px solid #BFBA76;
       border-radius: 15px;
       padding: 2rem;
     }
     .checkout-section h2 {
-      color: gold;
+      color: #BFBA76;
       margin-bottom: 1rem;
     }
     .checkout-section input, .checkout-section button {
@@ -101,8 +110,8 @@
       border: none;
     }
     .checkout-section button {
-      background-color: gold;
-      color: #000;
+      background-color: #BFBA76;
+      color: #5E1224;
       font-weight: bold;
       cursor: pointer;
     }
@@ -110,8 +119,8 @@
       max-width: 600px;
       margin: 3rem auto 2rem;
       padding: 2rem;
-      background-color: #1a1a1a;
-      border: 2px solid gold;
+      background-color: #5E1224;
+      border: 2px solid #BFBA76;
       border-radius: 20px;
       text-align: center;
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
@@ -122,79 +131,144 @@
     }
     .logo-box h1 {
       font-size: 2rem;
-      color: gold;
+      color: #BFBA76;
     }
     .category-title {
       text-align: center;
       font-size: 2rem;
       margin: 2rem 0 1rem;
-      color: gold;
+      color: #BFBA76;
     }
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
       padding: 1rem;
     }
     .drink-card {
-      background-color: #1a1a1a;
+      background-color: #5E1224;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 4px 25px rgba(255, 215, 0, 0.2);
       transition: transform 0.5s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
     .drink-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      cursor: pointer;
     }
     .drink-content {
       padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
     }
     .drink-content h2 {
-      color: gold;
+      color: #BFBA76;
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
+      min-height: 3em;
     }
     .drink-content p {
       font-size: 0.9rem;
       color: #ccc;
       margin-bottom: 0.5rem;
     }
-    .price {
-      color: lightgreen;
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
     .buy-btn {
-      background-color: gold;
-      color: #000;
+      background-color: #BFBA76;
+      color: #45131F;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
+      padding: 0.7rem;
+      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      width: 100%;
+      transition: background-color 0.3s;
+      margin-top: auto;
     }
     .buy-btn:hover {
-      background-color: #e6c200;
+      background-color: #BFBA76;
     }
-    .total-price {
-      margin-top: 1rem;
-      font-weight: bold;
-      color: lightgreen;
+  
+    
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #productModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #1a1a1a;
+      padding: 2rem;
+      border: 2px solid #BFBA76 ;
+      border-radius: 15px;
+      z-index: 2000;
+      max-width: 400px;
       text-align: center;
+    }
+    #productModal img {
+      max-width: 300px;
+      margin-bottom: 1rem;
+    }
+    #productModal button {
+      background-color: #BFBA76;
+      color: #000;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #search {
+      max-width: 600px;
+      margin: 1rem auto;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 2px solid #BFBA76;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-size: 1rem;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #1a1a1a;
+        padding: 1rem;
+        border: 2px solid gold;
+        border-radius: 10px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/16/audio_d9c00a50b1.mp3" type="audio/mpeg">
-  </audio>
+  
+<button id="finalizar-compra" style="display: none;">Finalizar Compra</button>
 
   <div id="topBar" class="top-bar fade-in">
     <div class="logo">La Couronne</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="nav-links">
       <a href="#cognacs">Cognacs</a>
       <a href="#whiskies">Whiskies</a>
@@ -207,25 +281,66 @@
   <div class="cart-items" id="cartBox">
     <h3>Seu Carrinho</h3>
     <ul id="cartList"></ul>
-    <div class="total-price" id="totalPrice">Total: R$ 0,00</div>
+    <div class="total-price" id="cartTotal">Total: R$ 0,00</div>
     <button class="checkout-btn" onclick="showCheckout()">Finalizar Compra</button>
   </div>
 
-  <div class="checkout-section" id="checkoutSection">
-    <h2>Finalizar Compra</h2>
-    <input type="text" placeholder="Nome completo" />
-    <input type="text" placeholder="Endereço de entrega" />
-    <input type="email" placeholder="E-mail" />
-    <input type="tel" placeholder="Telefone" />
-    <input type="text" placeholder="Número do Cartão" />
-    <input type="text" placeholder="Validade (MM/AA)" />
-    <input type="text" placeholder="CVV" />
-    <button onclick="alert('Compra realizada com sucesso!')">Confirmar Pagamento</button>
+<div class="checkout-section" id="checkoutSection">
+<h2>Finalizar Compra</h2>
+<input type="text" placeholder="Nome completo" />
+<input type="text" placeholder="Endereço de entrega" />
+<input type="email" placeholder="E-mail" />
+<input type="tel" placeholder="Telefone" />
+<div class="total-price" id="checkoutTotal">Total: R$ 0,00</div>
+<label for="pagamento">Forma de pagamento:</label>
+<select id="pagamento" name="pagamento" required onchange="mostrarPix()">
+<option value="">Selecione</option>
+<option value="cartao">Cartão de Crédito</option>
+<option value="pix">PIX</option>
+</select><br>
+
+<div id="info-pix" style="display:none; margin-top: 10px;">
+  <p><strong>Chave PIX:</strong> 11912186252</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=11912186252" alt="QR Code PIX">
+</div>
+
+
+<div id="info-pix" style="display:none; margin-top: 10px;">
+  <p><strong>Chave PIX:</strong> 11912186252</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=11912186252" alt="QR Code PIX">
+</div>
+    <div id="info-cartao" style="display:none; margin-top: 10px;">
+  <label for="numero-cartao">Número do cartão:</label>
+  <input type="text" id="numero-cartao" name="numero-cartao" maxlength="19" placeholder="0000 0000 0000 0000"><br>
+
+  <label for="nome-cartao">Nome no cartão:</label>
+  <input type="text" id="nome-cartao" name="nome-cartao"><br>
+
+  <label for="validade-cartao">Validade:</label>
+  <input type="text" id="validade-cartao" name="validade-cartao" placeholder="MM/AA"><br>
+
+  <label for="cvv-cartao">CVV:</label>
+  <input type="text" id="cvv-cartao" name="cvv-cartao" maxlength="4"><br>
+</div>
+
+    <button onclick="validateCheckout()">Confirmar Pagamento</button>
   </div>
 
+
+
+
   <div class="logo-box fade-in">
-    <img src="img/WhatsApp Image 2025-04-28 at 10.13.41.png.jpeg" alt="Logo Bebida de Luxo">
+    <img src="imagens/la cou.png" alt="Logo La Couronne">
     <h1>Bebida de Luxo</h1>
+  </div>
+
+
+
+  <div id="productModal">
+    <h2 id="modalTitle"></h2>
+    <img id="modalImage" alt="Produto">
+    <p id="modalDescription"></p>
+    <button onclick="closeModal()">Fechar</button>
   </div>
 
   <div id="cognacs" class="fade-in">
@@ -247,9 +362,6 @@
     <div class="category-title">Vinhos</div>
     <div class="container" id="vinhosContainer"></div>
   </div>
-  
-  <img src="img/louis whisck.jpg" alt="Imagem">
-
 
   <script>
     const cart = [];
@@ -258,24 +370,63 @@
     const totalPrice = document.getElementById('totalPrice');
     const cartBox = document.getElementById('cartBox');
     const checkoutSection = document.getElementById('checkoutSection');
+   document.addEventListener('DOMContentLoaded', () => {
+  atualizarCarrinho();
+});
 
-    function addToCart(nome, preco) {
-      cart.push({ nome, preco });
+
+
+    function addToCart(nome, preco, index) {
+      cart.push({ nome, preco, id: Date.now() + index });
       updateCart();
     }
 
-    function updateCart() {
-      cartList.innerHTML = '';
-      let total = 0;
-      cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.nome} - R$ ${item.preco.toLocaleString('pt-BR')}`;
-        cartList.appendChild(li);
-        total += item.preco;
-      });
-      cartCount.textContent = cart.length;
-      totalPrice.textContent = `Total: R$ ${total.toLocaleString('pt-BR')}`;
+    function removeFromCart(id) {
+      const index = cart.findIndex(item => item.id === id);
+      if (index !== -1) {
+        cart.splice(index, 1);
+        updateCart();
+      }
     }
+    function atualizarCarrinho() {
+  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  const botaoFinalizar = document.getElementById('finalizar-compra');
+
+  if (carrinho.length > 0) {
+    botaoFinalizar.style.display = 'block';
+  } else {
+    botaoFinalizar.style.display = 'none';
+  }
+
+  // Aqui você atualiza a visualização do carrinho na página
+}
+
+
+
+    function updateCart() {
+  cartList.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    const li = document.createElement('li');
+    li.innerHTML = `${item.nome} - R$ ${item.preco.toLocaleString('pt-BR')} 
+      <button onclick="removeFromCart(${item.id})" style="background: red; color: white; border: none; border-radius: 5px; padding: 0.2rem 0.5rem;">Remover</button>`;
+    cartList.appendChild(li);
+    total += item.preco;
+  });
+  cartCount.textContent = cart.length;
+
+  // Atualiza os dois elementos
+  const cartTotalEl = document.getElementById('cartTotal');
+  const checkoutTotalEl = document.getElementById('checkoutTotal');
+
+  if (cartTotalEl) {
+    cartTotalEl.textContent = `Total: R$ ${total.toLocaleString('pt-BR')}`;
+  }
+  if (checkoutTotalEl) {
+    checkoutTotalEl.textContent = `Total: R$ ${total.toLocaleString('pt-BR')}`;
+  }
+}
+
 
     function toggleCart() {
       cartBox.style.display = cartBox.style.display === 'block' ? 'none' : 'block';
@@ -286,78 +437,164 @@
       cartBox.style.display = 'none';
     }
 
+    function validateCheckout() {
+      const inputs = checkoutSection.querySelectorAll('input');
+      let valid = true;
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          valid = false;
+          input.style.border = '2px solid red';
+        } else {
+          input.style.border = 'none';
+        }
+      });
+      if (valid) {
+        alert('Compra realizada com sucesso!');
+        cart.length = 0;
+        updateCart();
+        checkoutSection.style.display = 'none';
+      } else {
+        alert('Por favor, preencha todos os campos.');
+      }
+    }
+
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+
+    
+    function showProductDetails(nome, preco, imagem, description = 'Uma bebida premium com notas únicas.') {
+      document.getElementById('modalTitle').textContent = nome;
+      document.getElementById('modalImage').src = imagem;
+      document.getElementById('modalDescription').textContent = description;
+      document.getElementById('productModal').style.display = 'block';  
+    }
+
+    function closeModal() {
+      document.getElementById('productModal').style.display = 'none';
+    }
+
     const produtos = {
-  cognacs: [
-    { nome: 'Hennessy XO', preco: 1800, imagem: 'imagens/hennessy.png' },
-    { nome: 'Rémy Martin Louis XIII', preco: 12000, imagem: 'imagens/remy martin.png' },
-    { nome: 'Martell Cordon Bleu', preco: 900, imagem: 'imagens/cordon bleu.png' },
-    { nome: 'Courvoisier XO', preco: 1200, imagem: 'https://images.unsplash.com/photo-1612550062220-2aa2cc56e00e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Camus Borderies XO', preco: 1400, imagem: 'https://images.unsplash.com/photo-1626166086531-2b8b60f4e3c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Hine Antique XO', preco: 1600, imagem: 'https://images.unsplash.com/photo-1594235046843-6e4c8b2fa2d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Delamain Pale & Dry', preco: 1300, imagem: 'https://images.unsplash.com/photo-1585155775538-cf9ccde1db9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Frapin XO VIP', preco: 1700, imagem: 'https://images.unsplash.com/photo-1618354691454-9e6a3d8a7b36?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-  ],
-  whiskies: [
-    { nome: 'Johnnie Walker Blue Label', preco: 1300, imagem: 'https://images.unsplash.com/photo-1599923495961-f7e39e4e76fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Macallan 18 anos', preco: 2400, imagem: 'https://images.unsplash.com/photo-1616004664513-92ce40938e5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Glenfiddich 21 anos', preco: 1500, imagem: 'https://images.unsplash.com/photo-1569696068325-cc0933f8312a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Chivas Regal 25 anos', preco: 2100, imagem: 'https://images.unsplash.com/photo-1630324322155-0d6ab6576b2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Yamazaki 18 anos', preco: 2800, imagem: 'https://images.unsplash.com/photo-1612468881322-c1b124ecfb1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Lagavulin 16 anos', preco: 1000, imagem: 'https://images.unsplash.com/photo-1615486364697-bf529a0b3e76?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Talisker 18 anos', preco: 1200, imagem: 'https://images.unsplash.com/photo-1601120922084-c540c0b4952b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Oban 18 anos', preco: 1300, imagem: 'https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-  ],
-  champanhes: [
-    { nome: 'Dom Pérignon Vintage', preco: 1800, imagem: 'https://images.unsplash.com/photo-1578688766662-6a68d8e84e07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Krug Grande Cuvée', preco: 2300, imagem: 'https://images.unsplash.com/photo-1566840397420-09be6b7a0d53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Cristal Brut Louis Roederer', preco: 2700, imagem: 'https://images.unsplash.com/photo-1601464784760-d1d7fbd9b9ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Bollinger La Grande Année', preco: 1500, imagem: 'https://images.unsplash.com/photo-1612437489390-f16c25b2cf14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Veuve Clicquot La Grande Dame', preco: 1900, imagem: 'https://images.unsplash.com/photo-1614774684152-3ff7de6e65e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Perrier-Jouët Belle Epoque', preco: 2100, imagem: 'https://images.unsplash.com/photo-1611199972487-5ef7f53e3e17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Salon Blanc de Blancs', preco: 4000, imagem: 'https://images.unsplash.com/photo-1581574231537-6ac7e4a5790d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Taittinger Comtes de Champagne', preco: 2500, imagem: 'https://images.unsplash.com/photo-1571771773482-9df915aa0494?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-  ],
-  vinhos: [
-    { nome: 'Château Margaux', preco: 3200, imagem: 'https://images.unsplash.com/photo-1562007901-3641b2090481?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Sassicaia', preco: 2900, imagem: 'https://images.unsplash.com/photo-1613146613120-c8f3e16e3178?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Penfolds Grange', preco: 3400, imagem: 'https://images.unsplash.com/photo-1604681592442-fbfa24b5e1e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Vega Sicilia Único', preco: 3100, imagem: 'https://images.unsplash.com/photo-1607010901653-42c9dc8dbe17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Opus One', preco: 3000, imagem: 'https://images.unsplash.com/photo-1598797086173-0c3c19591d18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Pétrus', preco: 10000, imagem: 'https://images.unsplash.com/photo-1604470469481-8e982d8d8f34?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Barolo Monfortino', preco: 2500, imagem: 'https://images.unsplash.com/photo-1619447331107-2bd29adfdf34?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-    { nome: 'Château d’Yquem', preco: 4000, imagem: 'https://images.unsplash.com/photo-1635513756249-cbdb10cc4de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60' },
-  ],
-};
+      cognacs: [
+        { nome: 'Hennessy XO', preco: 1800, imagem: 'imagens/hennessy.png' },
+        { nome: 'Rémy Martin Louis XIII', preco: 12000, imagem: 'imagens/remy martin.png' },
+        { nome: 'Martell Cordon Bleu', preco: 900, imagem: 'imagens/cordon bleu.png' },
+        { nome: 'Courvoisier XO', preco: 1200, imagem: 'imagens/courvoisier.jpg' },
+        { nome: 'Camus Borderies XO', preco: 1400, imagem: 'imagens/camus.png' },
+        { nome: 'Hine Antique XO', preco: 1600, imagem: 'imagens/hine.png' },
+        { nome: 'Delamain Pale & Dry', preco: 1300, imagem: 'imagens/delamain.png' },
+        { nome: 'Frapin XO VIP', preco: 1700, imagem: 'imagens/frapin.png' },
+      ],
+      whiskies: [
+        { nome: 'Johnnie Walker Blue Label', preco: 1300, imagem: 'imagens/bluelabel.jpg' },
+        { nome: 'Macallan 18 anos', preco: 2400, imagem: 'imagens/macallan.jpg' },
+        { nome: 'Glenfiddich 21 anos', preco: 1500, imagem: 'imagens/glenfiddich.jpg' },
+        { nome: 'Chivas Regal 25 anos', preco: 2100, imagem: 'imagens/chivas25.jpg' },
+        { nome: 'Yamazaki 18 anos', preco: 2800, imagem: 'imagens/yamazaki.webp' },
+        { nome: 'Lagavulin 16 anos', preco: 1000, imagem: 'imagens/lagavulin.webp' },
+        { nome: 'Talisker 18 anos', preco: 1200, imagem: 'imagens/talisker.webp' },
+        { nome: 'Oban 18 anos', preco: 1300, imagem: 'imagens/oban.jpg' },
+      ],
+      champanhes: [
+        { nome: 'Dom Pérignon Vintage', preco: 1800, imagem: 'imagens/dom.avif' },
+        { nome: 'Krug Grande Cuvée', preco: 2300, imagem: 'imagens/krug.avif' },
+        { nome: 'Cristal Brut Louis Roederer', preco: 2700, imagem: 'imagens/cristal.webp' },
+        { nome: 'Bollinger La Grande Année', preco: 1500, imagem: 'imagens/bollin.jpeg' },
+        { nome: 'Veuve Clicquot La Grande Dame', preco: 1900, imagem: 'imagens/click.webp' },
+        { nome: 'Perrier-Jouët Belle Epoque', preco: 2100, imagem: 'imagens/perrier.jpg' },
+        { nome: 'Salon Blanc de Blancs', preco: 4000, imagem: 'imagens/salon.webp' },
+        { nome: 'Taittinger Comtes de Champagne', preco: 2500, imagem: 'imagens/comtes.jpg' },
+      ],
+      vinhos: [
+        { nome: 'Château Margaux', preco: 3200, imagem: 'imagens/margaux.jpg' },
+        { nome: 'Sassicaia', preco: 2900, imagem: 'imagens/Sassicia.jpg' },
+        { nome: 'Penfolds Grange', preco: 3400, imagem: 'imagens/pen.jpg' },
+        { nome: 'Vega Sicilia Único', preco: 3100, imagem: 'imagens/sicilia.webp' },
+        { nome: 'Opus One', preco: 3000, imagem: 'imagens/opus.jpg' },
+        { nome: 'Pétrus', preco: 10000, imagem: 'imagens/petrus.webp' },
+        { nome: 'Barolo Monfortino', preco: 2500, imagem: 'imagens/borbolo.webp' },
+        { nome: 'Château d’Yquem', preco: 4000, imagem: 'imagens/chate.webp' },
+      ],
+    };
 
+    function renderProducts(filteredProdutos = produtos) {
+      for (const categoria in filteredProdutos) {
+        const container = document.getElementById(`${categoria}Container`);
+        container.innerHTML = '';
+        const fragment = document.createDocumentFragment();
+        filteredProdutos[categoria].forEach((produto, index) => {
+          const card = document.createElement('div');
+          card.className = 'drink-card';
+          card.innerHTML = `
+            <img src="${produto.imagem}" alt="${produto.nome}" onclick="showProductDetails('${produto.nome}', ${produto.preco}, '${produto.imagem}')">
+            <div class="drink-content">
+              <h2>${produto.nome}</h2>
+              <p class="price">R$ ${produto.preco.toLocaleString('pt-BR')}</p>
+              <button class="buy-btn" onclick="addToCart('${produto.nome}', ${produto.preco}, ${index})">Comprar</button>
+            </div>
+          `;
+          fragment.appendChild(card);
+        });
+        container.appendChild(fragment);
+      }
+    }
 
-
-
-    function renderProducts() {
-      // (função para gerar os produtos em cada container)
+    function filterProducts() {
+      const query = document.getElementById('search').value.toLowerCase();
+      const filteredProdutos = {};
+      for (const categoria in produtos) {
+        filteredProdutos[categoria] = produtos[categoria].filter(produto => 
+          produto.nome.toLowerCase().includes(query)
+        );
+      }
+      renderProducts(filteredProdutos);
     }
 
     window.onload = () => {
       renderProducts();
       setTimeout(() => document.querySelectorAll('.fade-in').forEach(el => el.classList.add('show')), 300);
     };
-    function renderProducts() {
-  for (const categoria in produtos) {
-    const container = document.getElementById(`${categoria}Container`);
-    produtos[categoria].forEach(produto => {
-      container.innerHTML += `
-        <div class="drink-card">
-          <img src="${produto.imagem}" alt="${produto.nome}">
-          <div class="drink-content">
-            <h2>${produto.nome}</h2>
-            <p class="price">R$ ${produto.preco.toLocaleString('pt-BR')}</p>
-            <button class="buy-btn" onclick="addToCart('${produto.nome}', ${produto.preco})">Comprar</button>
-          </div>
-        </div>
-      `;
-    });
-  }
-}
   </script>
+  <script>
+    
+  function mostrarPix() {
+  const tipoPagamento = document.getElementById("pagamento").value;
+  const infoPixElems = document.querySelectorAll(".info-pix");
+  const infoCartao = document.getElementById("info-cartao");
+
+  infoPixElems.forEach(el => el.style.display = tipoPagamento === "pix" ? "block" : "none");
+  infoCartao.style.display = tipoPagamento === "cartao" ? "block" : "none");
+
+  // Atualizar valor total visível
+  document.getElementById("valor-total").textContent = `Total a pagar: R$ ${valorTotal.toFixed(2)}`;
+}
+
+   
+  
+</script>
+<script>
+  function mostrarPix() {
+    const tipoPagamento = document.getElementById("pagamento").value;
+    const infoPix = document.getElementById("info-pix");
+    const infoCartao = document.getElementById("info-cartao");
+
+    
+
+    if (tipoPagamento === "pix") {
+      infoPix.style.display = "block";
+      infoCartao.style.display = "none";
+    } else if (tipoPagamento === "cartao") {
+      infoPix.style.display = "none";
+      infoCartao.style.display = "block";
+    } else {
+      infoPix.style.display = "none";
+      infoCartao.style.display = "none";
+    }
+  }
+  
+</script>
+
+
 
 </body>
 </html>
